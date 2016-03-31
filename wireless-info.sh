@@ -2,6 +2,7 @@
 
 # This file is an adaptation by Slimbook TEAM ( www.slimbook.es )
 # LAST UPDATE : 31 March 2016
+# This scrript work fine with ubuntu laptops with intel wifi drivers, and other laptops with other brands wifi cards
 
 #
 # Copyright (c) 2012
@@ -421,15 +422,19 @@ sed "$MACMASKSED /\([[:alnum:]]\{2\}:\)\{6,\}/! s/\([[:alnum:]]\{2\}:\)\{5\}[[:a
 
 ##### The End #####
 
-dialog_info "${TERMOUT+\n}Results saved in \"$OUTPUTDIR/$FILEBASE.txt\".${TERMOUT+\n}"
+dialog_info "${TERMOUT+\n}Resultados de los test guardados en la ruta \"$OUTPUTDIR/$FILEBASE.txt\".${TERMOUT+}"
 
-if (( $(stat -c %s "$OUTPUTDIR/$FILEBASE.txt") > 19968 )); then
+dialog_info "${TERMOUT+}Abriendo el archivo con tu editor gráfico por defecto. Si falla accede al fichero desde el explorador de archivos. ${TERMOUT+\n}"
+
+xdg-open $OUTPUTDIR/$FILEBASE.txt
+
+if (( $(stat -c %s "$OUTPUTDIR/$FILEBASE.txt") > 119968 )); then
     tar -czf "$OUTPUTDIR/$FILEBASE.tar.gz" -C "$OUTPUTDIR" "$FILEBASE.txt" && \
 	dialog_info "Results also archived in \"$OUTPUTDIR/$FILEBASE.tar.gz\",${DIALOGBREAK}as they exceed the 19.5 kB size limit for \".txt\" attachments${DIALOGBREAK}on the Ubuntu Forums.${TERMOUT+\n}" || \
 	dialog_error "Results exceed the 19.5 kB size limit for \".txt\" attachments${DIALOGBREAK}on the Ubuntu Forums, but archive could not be created.${TERMOUT+\n}"
 fi
 
-if [ -x /usr/bin/pastebinit ] && ping -nc 3 -w 6 -i 0.2 paste.ubuntu.com > /dev/null 2>&1; then
+if [ -x /usr/bin/pastebin ] && ping -nc 3 -w 6 -i 0.2 paste.ubuntu.com > /dev/null 2>&1; then
     PASTEBIN=$(dialog_question "Do you also want to post them${DIALOGBREAK}to your default 'pastebinit' provider?")
     if [[ ! $PASTEBIN =~ ^no?$ ]]; then
 	PASTERESULT=$(pastebinit -i "$OUTPUTDIR/$FILEBASE.txt" -f text 2>&1) && PASTESUCCESS="yes"
@@ -446,4 +451,3 @@ if [ -x /usr/bin/pastebinit ] && ping -nc 3 -w 6 -i 0.2 paste.ubuntu.com > /dev/
 	echo
     fi
 fi
-
