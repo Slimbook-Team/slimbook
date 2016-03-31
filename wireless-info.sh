@@ -147,7 +147,11 @@ exec 1> "$OUTPUTDIR/$FILEBASE.txt" || {
 }
 exec 2>&1
 
-printf "\n########## wireless info START ##########\n\n"
+printf "\n#### SLIMBOOK TEAM (www.slimbook.es) ####"
+                                                                                                                                                                                               
+                                                                                                    
+printf "\n##### wireless info START ###############\n\n"
+
 REPORTDATE=$(date +"%d %b %Y %H:%M %Z %z")
 SCRIPTDATE=$(date -u -d "$SCRIPTDATE" +"%d %b %Y %H:%M %Z %z")
 LASTBOOTDT=$(last -FRn 1 reboot | sed -n 's/.*system boot[ ]\+\(.\+\) - .*$/\1/p')
