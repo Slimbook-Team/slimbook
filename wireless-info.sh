@@ -30,7 +30,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-SCRIPTDATE="2015-09-27 02:34 +0200"
+SCRIPTDATE="2016-03-31 20:34 +0200"
 FILEBASE="wireless-info"
 OUTPUTDIR="$PWD"
 OUTPUTDIRFB="/tmp"
