@@ -22,21 +22,21 @@ echo -e $AMARILLO"Saliendo..."$COLORFIN
 exit 0
 fi
 
-echo -e $AMARILLO"Limpiando la cache apt..."$COLORFIN
+echo -e "Limpiando la cache apt..."
 apt-get -qq clean
 
-echo -e $AMARILLO"Eliminando viejos ficheros de configuracion..."$COLORFIN
+echo -e "Eliminando viejos ficheros de configuracion..."
 sudo apt-get -qq purge $OLDCONF
 
-echo -e $AMARILLO"Eliminando viejos kernels..."$COLORFIN
+echo -e "Eliminando viejos kernels..."
 sudo apt-get -qq purge $OLDKERNELS
 
-echo -e $AMARILLO"Eliminando los residuos..."$COLORFIN
+echo -e "Eliminando los residuos..."
 rm -rf /root/.local/share/Trash/*/** &> /dev/null
 
-echo -e $AMARILLO"Actualizando el cargador de arranque..."$COLORFIN
+echo -e "Actualizando el cargador de arranque..."
 update-grub
 
-apt-get install linux-generic
+apt-get install linux-generic -y
 
-echo -e $AMARILLO"Script ejecutado correctamente"$COLORFIN
+echo -e "Script ejecutado correctamente"
