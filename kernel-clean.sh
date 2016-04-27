@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This file is an adaptation of original script of Atica, by Slimbook TEAM ( www.slimbook.es )
+# This file is an adaptation of original script of itadicts, by Slimbook TEAM ( www.slimbook.es )
 # LAST UPDATE : 27 April 2016
 
 # COMANDOS	
