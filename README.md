@@ -1,6 +1,8 @@
 # SLIMBOOK
 "Welcome to freedom"
+
 El ultrabook GNU/Linux
+
 www.slimbook.es
 
 SLIMBOOK TEAM
