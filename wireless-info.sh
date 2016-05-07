@@ -380,6 +380,10 @@ printf "\n##### dmesg | grep iwl #############################\n\n"
 
 dmesg | grep iwl
 
+printf "\n##### lspci -vvvv (list of controllers) #############################\n\n"
+
+sudo lspci -vvvv
+
 printf "\n########## wireless info END ############\n\n"
 
 exec 2>&4 4>&-
