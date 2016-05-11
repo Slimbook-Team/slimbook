@@ -380,6 +380,10 @@ printf "\n##### dmesg | grep iwl #############################\n\n"
 
 dmesg | grep iwl
 
+printf "\n##### dmesg | grep blue  (of bluetooth or blueman or bluez) #############################\n\n"
+
+dmesg | grep blue
+
 printf "\n##### lspci -vvvv (list of controllers) #############################\n\n"
 
 sudo lspci -vvvv
