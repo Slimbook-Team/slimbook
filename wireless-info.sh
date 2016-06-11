@@ -174,14 +174,13 @@ if [ -n "$DESKTOP_SESSION" ]; then
 else
     #DESKTOP=$(sed -n 's/^Session=\(.\+\)$/\1/p' "$HOME/.dmrc")
     #DESKDMRC=" (from ~/.dmrc)"
-	echo "."
+	#cambios por si ejecutamos script desde root y no tiene escritorio
 	USUARIO=$(last -w -1 | head -1 | awk '{print $1}')
+	#ejecutando comando como otro usuario
 	RUTADMRC=$(su -c 'echo "$HOME/.dmrc"' - $USUARIO)
 	DESKDMRC=$(su -c 'echo "$HOME/.dmrc"' - $USUARIO)
 	DESKTOP=$(sed -n 's/^Session=\(.\+\)$/\1/p' $RUTADMRC)
-	echo "$DESKTOP"
-	#USUARIO=$(last -w -1 | head -1 | awk '{print $1}')
-	#DESKTOP=$(su -c 'sed -n 's/^Session=\(.\+\)$/\1/p' "$HOME/.dmrc"' - $USUARIO)
+	#echo "$DESKTOP"
 fi
 if [ -n "$DESKTOP" ]; then
     if [ -f "/usr/share/xsessions/$DESKTOP.desktop" ]; then
