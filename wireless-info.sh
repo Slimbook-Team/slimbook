@@ -176,6 +176,10 @@ else
     DESKDMRC=" (from ~/.dmrc)"
 fi
 if [ -n "$DESKTOP" ]; then
+	USUARIO=$(last -w -1 | awk '{print $1}')
+	DESKTOP=$(su -c 'sed -n 's/^Session=\(.\+\)$/\1/p' "$HOME/.dmrc"' - $USUARIO)
+fi
+if [ -n "$DESKTOP" ]; then
     if [ -f "/usr/share/xsessions/$DESKTOP.desktop" ]; then
 	DESKTOP=$(sed -n 's/^Name=\(.\+\)$/\1/p' "/usr/share/xsessions/$DESKTOP.desktop")
     fi
