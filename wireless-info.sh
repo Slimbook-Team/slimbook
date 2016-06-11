@@ -174,7 +174,7 @@ if [ -n "$DESKTOP_SESSION" ]; then
 else
     #DESKTOP=$(sed -n 's/^Session=\(.\+\)$/\1/p' "$HOME/.dmrc")
     #DESKDMRC=" (from ~/.dmrc)"
-
+	echo "\nCheck desktop\n";
 	USUARIO=$(last -w -1 | head -1 | awk '{print $1}')
 	RUTADMRC=$(su -c 'echo "$HOME/.dmrc"' - $USUARIO)
 	DESKDMRC=$(su -c 'echo "$HOME/.dmrc"' - $USUARIO)
