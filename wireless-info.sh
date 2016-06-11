@@ -172,12 +172,12 @@ printf "\n##### desktop ###########################\n\n"
 if [ -n "$DESKTOP_SESSION" ]; then
     DESKTOP="$DESKTOP_SESSION"
 else
-    DESKTOP=$(sed -n 's/^Session=\(.\+\)$/\1/p' "$HOME/.dmrc")
-    DESKDMRC=" (from ~/.dmrc)"
-fi
-if [ -n "$DESKTOP" ]; then
+    #DESKTOP=$(sed -n 's/^Session=\(.\+\)$/\1/p' "$HOME/.dmrc")
+    #DESKDMRC=" (from ~/.dmrc)"
+
 	USUARIO=$(last -w -1 | head -1 | awk '{print $1}')
 	RUTADMRC=$(su -c 'echo "$HOME/.dmrc"' - $USUARIO)
+	DESKDMRC=$(su -c 'echo "$HOME/.dmrc"' - $USUARIO)
 	DESKTOP=$(sed -n 's/^Session=\(.\+\)$/\1/p' $RUTADMRC)
 	#USUARIO=$(last -w -1 | head -1 | awk '{print $1}')
 	#DESKTOP=$(su -c 'sed -n 's/^Session=\(.\+\)$/\1/p' "$HOME/.dmrc"' - $USUARIO)
