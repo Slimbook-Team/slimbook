@@ -179,6 +179,7 @@ else
 	RUTADMRC=$(su -c 'echo "$HOME/.dmrc"' - $USUARIO)
 	DESKDMRC=$(su -c 'echo "$HOME/.dmrc"' - $USUARIO)
 	DESKTOP=$(sed -n 's/^Session=\(.\+\)$/\1/p' $RUTADMRC)
+	echo "$DESKTOP"
 	#USUARIO=$(last -w -1 | head -1 | awk '{print $1}')
 	#DESKTOP=$(su -c 'sed -n 's/^Session=\(.\+\)$/\1/p' "$HOME/.dmrc"' - $USUARIO)
 fi
