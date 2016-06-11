@@ -177,7 +177,10 @@ else
 fi
 if [ -n "$DESKTOP" ]; then
 	USUARIO=$(last -w -1 | head -1 | awk '{print $1}')
-	DESKTOP=$(su -c 'sed -n 's/^Session=\(.\+\)$/\1/p' "$HOME/.dmrc"' - $USUARIO)
+	RUTADMRC=$(su -c 'echo "$HOME/.dmrc"' - $USUARIO)
+	DESKTOP=$(sed -n 's/^Session=\(.\+\)$/\1/p' $RUTADMRC)
+	#USUARIO=$(last -w -1 | head -1 | awk '{print $1}')
+	#DESKTOP=$(su -c 'sed -n 's/^Session=\(.\+\)$/\1/p' "$HOME/.dmrc"' - $USUARIO)
 fi
 if [ -n "$DESKTOP" ]; then
     if [ -f "/usr/share/xsessions/$DESKTOP.desktop" ]; then
