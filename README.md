@@ -15,7 +15,11 @@ Advanced Product Configurator (based on the Pledra project)
 
 [//]: # (addons)
 
-This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+Available addons
+----------------
+addon | version | summary
+--- | --- | ---
+[product_configurator](product_configurator/) | 14.0.1.0.0 | Base for product configuration interface modules
 
 [//]: # (end addons)
 
