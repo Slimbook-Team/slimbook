@@ -19,7 +19,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
-[product_configurator](product_configurator/) | 14.0.1.0.0 | Base for product configuration interface modules
+[product_configurator](product_configurator/) | 14.0.1.0.1 | Base for product configuration interface modules
 
 [//]: # (end addons)
 
