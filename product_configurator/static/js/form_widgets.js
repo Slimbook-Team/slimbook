@@ -1,5 +1,4 @@
-/* Add one more option to boolean_button form widget
- * (displayed in the product.template form view) */
+/* Add one more option to boolean_button form widget (displayed in the product.template form view) */
 odoo.define("product_configurator.FieldBooleanButton", function (require) {
     "use strict";
     var basic_fields = require("web.basic_fields");
@@ -49,7 +48,8 @@ odoo.define("product_configurator.FieldBooleanButton", function (require) {
     });
 
     FormController.include({
-        renderButtons: function () {
+        /* eslint-disable no-unused-vars*/
+        renderButtons: function ($node) {
             var self = this;
             this._super.apply(this, arguments);
             if (
@@ -59,12 +59,13 @@ odoo.define("product_configurator.FieldBooleanButton", function (require) {
                 this.$buttons.find(".o_form_button_create").css("display", "none");
             }
         },
+        /* eslint-disable no-unused-vars*/
 
         _onButtonClicked: function (event) {
             var self = this;
             var attrs = event.data.attrs;
             if (event.data.attrs.context) {
-                var btn_ctx = pyUtils.eval("context", event.data.attrs);
+                var btn_ctx = pyUtils.eval("context", event.data.attrs.context);
                 var record_ctx = self.model.get(event.data.record.id).context;
                 self.model.localData[event.data.record.id].context = _.extend(
                     {},
@@ -84,7 +85,8 @@ odoo.define("product_configurator.FieldBooleanButton", function (require) {
         },
     });
     ListController.include({
-        renderButtons: function () {
+        /* eslint-disable no-unused-vars*/
+        renderButtons: function ($node) {
             var self = this;
             this._super.apply(this, arguments);
             if (
@@ -94,9 +96,11 @@ odoo.define("product_configurator.FieldBooleanButton", function (require) {
                 this.$buttons.find(".o_list_button_add").css("display", "none");
             }
         },
+        /* eslint-disable no-unused-vars*/
     });
     KanbanController.include({
-        renderButtons: function () {
+        /* eslint-disable no-unused-vars*/
+        renderButtons: function ($node) {
             var self = this;
             this._super.apply(this, arguments);
             if (
@@ -106,6 +110,7 @@ odoo.define("product_configurator.FieldBooleanButton", function (require) {
                 this.$buttons.find(".o-kanban-button-new").css("display", "none");
             }
         },
+        /* eslint-disable no-unused-vars*/
     });
 
     registry.add("boolean_button", FieldBooleanButton);

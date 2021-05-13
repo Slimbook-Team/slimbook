@@ -114,6 +114,7 @@ class ProductTemplate(models.Model):
         help="Generate Name based on Mako Template",
         copy=True,
     )
+
     # We are calculating weight of variants based on weight of
     # product-template so that no need of compute and inverse on this
     weight = fields.Float(
@@ -381,9 +382,6 @@ class ProductTemplate(models.Model):
 class ProductProduct(models.Model):
     _inherit = "product.product"
     _rec_name = "config_name"
-
-    def toggle_config(self):
-        return self.product_tmpl_id.toggle_config()
 
     def _get_conversions_dict(self):
         conversions = {"float": float, "integer": int}

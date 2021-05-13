@@ -90,6 +90,7 @@ class ProductConfigDomainLine(models.Model):
 
         return andor
 
+    @api.depends("attribute_id")
     def _compute_template_attribute_value_ids(self):
         for domain in self:
             domain.template_attribute_value_ids = (
@@ -110,14 +111,6 @@ class ProductConfigDomainLine(models.Model):
             and (template_lines.mapped("value_ids") & attribute_values)
             or attribute_values
         )
-
-    @api.onchange("attribute_id")
-    def onchange_attribute_id(self):
-        allowed_value_ids = self._get_allowed_attribute_value_ids()
-        return {
-            "domain": {"value_ids": [("id", "in", allowed_value_ids.ids)]},
-            "value": {"value_ids": False},
-        }
 
     template_attribute_value_ids = fields.Many2many(
         comodel_name="product.attribute.value",
@@ -207,6 +200,7 @@ class ProductConfigLine(models.Model):
     )
     value_ids = fields.Many2many(
         comodel_name="product.attribute.value",
+        relation="cfg_line_attr_val_id_rel",
         column1="cfg_line_id",
         column2="attr_val_id",
         string="Values",
@@ -678,7 +672,7 @@ class ProductConfigSession(models.Model):
         try:
             self.validate_configuration(final=False)
         except ValidationError as ex:
-            raise ValidationError(ex.name)
+            raise ValidationError(_("%s" % ex.name))
         except Exception:
             raise ValidationError(_("Invalid Configuration"))
         return res
@@ -709,7 +703,7 @@ class ProductConfigSession(models.Model):
                 # TODO: Remove if cond when PR with
                 # raise error on github is merged
             except ValidationError as ex:
-                raise ValidationError(ex.name)
+                raise ValidationError(_("%s" % ex.name))
             except Exception:
                 raise ValidationError(
                     _("Default values provided generate an invalid " "configuration")
@@ -739,7 +733,7 @@ class ProductConfigSession(models.Model):
         try:
             self.validate_configuration()
         except ValidationError as ex:
-            raise ValidationError(ex.name)
+            raise ValidationError(_("%s" % ex.name))
         except Exception:
             raise ValidationError(_("Invalid Configuration"))
 
@@ -1318,6 +1312,7 @@ class ProductConfigSession(models.Model):
         self.check_attributes_configuration(
             attribute_line_ids, custom_vals, value_ids, final=final
         )
+
         # Check if all all the values passed are not restricted
         avail_val_ids = self.values_available(
             value_ids, value_ids, product_tmpl_id=product_tmpl_id
