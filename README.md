@@ -23,6 +23,7 @@ addon | version | summary
 [product_configurator_mrp](product_configurator_mrp/) | 14.0.1.2.0 | BOM Support for configurable products
 [product_configurator_sale](product_configurator_sale/) | 14.0.1.0.0 | Product configuration interface modules for Sale
 [product_configurator_sale_mrp](product_configurator_sale_mrp/) | 14.0.1.0.1 | BOM Support for sales wizard
+[website_product_configurator](website_product_configurator/) | 14.0.1.0.0 | Configure products in e-shop
 
 [//]: # (end addons)
 
