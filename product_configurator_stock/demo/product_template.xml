@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<openerp>
+<odoo>
 <data>
 
     <!-- TODO: Workaround until we add more demo data Services + Products -->
@@ -124,4 +123,4 @@
     </record>
 
 </data>
-</openerp>
+</odoo>

@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <record id="view_move_form_config" model="ir.ui.view">
         <field name="name">stock.move.form.config</field>

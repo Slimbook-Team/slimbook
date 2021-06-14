@@ -1,3 +1,5 @@
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+
 {
     "name": "Product Configurator for Stock",
     "version": "14.0.1.0.0",
@@ -15,8 +17,6 @@
         "views/product_view.xml",
     ],
     "demo": ["demo/product_template.xml"],
-    "images": [],
-    "test": [],
     "installable": True,
     "auto_install": False,
 }
