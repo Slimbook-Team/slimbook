@@ -13,6 +13,7 @@ setuptools.setup(
         'odoo14-addon-product_configurator_purchase',
         'odoo14-addon-product_configurator_sale',
         'odoo14-addon-product_configurator_sale_mrp',
+        'odoo14-addon-product_configurator_stock',
         'odoo14-addon-website_product_configurator',
     ],
     classifiers=[
