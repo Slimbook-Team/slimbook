@@ -16,7 +16,7 @@ Para ejecutar los scripts;
   ```
   cd <ruta>
   ```
-4. Ejecútalo usando bash o sh:
+4. Ejecútalo usando sh:
   ```
   sh script.sh
   ```
