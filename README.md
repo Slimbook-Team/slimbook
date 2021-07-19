@@ -12,11 +12,11 @@ Scripts
 Para ejecutar los scripts adjuntos;
 1. Descargalos
 2. Abre una terminal (ctrl+alt+t)
-3. Sitúate en la ruta de script
+3. Sitúate en la ruta de script:
   ```
   cd <ruta>
   ```
-4. Ejecútalo usando bash o sh
+4. Ejecútalo usando bash o sh:
   ```
   sh script.sh
   ```
