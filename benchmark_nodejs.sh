@@ -30,4 +30,4 @@ h=$(($elapsed/3600))
 m=$((($elapsed%3600)/60))
 s=$(($elapsed%60))
 
-printf "\nSLIMBOOK CPU benchmark finished. \nCPU:$cpu \nTotal time (hours:minutes:seconds): %02d:%02d:%02d \n" $h $m $s
+printf "\nCPU benchmark finished. \nCPU:$cpu \nTotal time (hours:minutes:seconds): %02d:%02d:%02d \n" $h $m $s
