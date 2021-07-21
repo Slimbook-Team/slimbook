@@ -1,4 +1,13 @@
 #!/bin/bash
+
+# instructions:
+# Open a terminal and run:
+# wget https://raw.githubusercontent.com/slimbook/slimbook/master/benchmark_nodejs.sh
+# bash benchmark_nodejs.sh
+# wait 10 minutes (or more)
+# share your result with us, twitter: @SlimbookES
+
+
 threads=$(lscpu | egrep 'CPU\(s\)\:' | cut -d ':' -f 2)
 
 cpu=$(cat /proc/cpuinfo | grep 'model name' | head -1 | cut -d ':' -f2)
