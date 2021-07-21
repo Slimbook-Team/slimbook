@@ -1,7 +1,8 @@
 #!/bin/bash
+# SLIMBOOK TEAM 2021
 
 # instructions:
-# Open a terminal and run:
+# open a terminal and run:
 # wget https://raw.githubusercontent.com/slimbook/slimbook/master/benchmark_nodejs.sh
 # bash benchmark_nodejs.sh
 # wait 10 minutes (or more)
