@@ -23,7 +23,8 @@ make -s -j $threads 2>&1
 end_time="$(date -u +%s)"
 
 elapsed="$(($end_time-$start_time))"
+h=$(($elapsed/3600))
+m=$((($elapsed%3600)/60))
+s=$(($elapsed%60))
 
-
-echo "Total of $elapsed seconds elapsed for process"
-echo "Your cpu: $cpu"
+printf "\nFinished. \nCPU:$cpu \nTotal time: %02d:%02d:%02d \n" $h $m $s
