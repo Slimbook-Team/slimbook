@@ -20,7 +20,7 @@ cd node-14.17.3
 ./configure  
 
 start_time="$(date -u +%s)"
-make -kis -j $threads 2>&1 
+make -s -j $threads 2>&1 
 end_time="$(date -u +%s)"
 
 elapsed="$(($end_time-$start_time))"
