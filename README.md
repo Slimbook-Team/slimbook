@@ -16,9 +16,9 @@ Para ejecutar los scripts;
   ```
   cd <ruta>
   ```
-4. Ejecútalo usando sh:
+4. Ejecútalo usando bash:
   ```
-  sh script.sh
+  bash script.sh
   ```
 
 Desarrollamos aplicaciones para optimizar tu portátil ultrabook.
