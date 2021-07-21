@@ -1,3 +1,4 @@
+#!/bin/bash
 threads=$(lscpu | egrep 'CPU\(s\)\:' | cut -d ':' -f 2)
 
 wget https://github.com/nodejs/node/archive/refs/tags/v14.17.3.tar.gz 
