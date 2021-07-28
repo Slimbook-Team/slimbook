@@ -22,6 +22,7 @@ addon | version | summary
 [product_configurator](product_configurator/) | 14.0.1.2.2 | Base for product configuration interface modules
 [product_configurator_mrp](product_configurator_mrp/) | 14.0.1.2.0 | BOM Support for configurable products
 [product_configurator_purchase](product_configurator_purchase/) | 14.0.1.0.0 | Product configuration interface for Purchase
+[product_configurator_restriction_policy](product_configurator_restriction_policy/) | 14.0.1.0.0 | Adds a Restriction Policy for processing restrictions.
 [product_configurator_sale](product_configurator_sale/) | 14.0.1.0.0 | Product configuration interface modules for Sale
 [product_configurator_sale_mrp](product_configurator_sale_mrp/) | 14.0.1.0.2 | BOM Support for sales wizard
 [product_configurator_stock](product_configurator_stock/) | 14.0.1.0.0 | Product configuration interface module for Stock
