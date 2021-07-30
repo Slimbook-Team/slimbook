@@ -10,7 +10,7 @@ SLIMBOOK TEAM
 Scripts
 --
 Para ejecutar los scripts;
-1. Descargalos
+1. Descárgalos
 2. Abre una terminal (ctrl+alt+t)
 3. Sitúate en la ruta de script:
   ```
