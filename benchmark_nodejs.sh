@@ -9,7 +9,7 @@
 # share your result with us, twitter: @SlimbookES
 
 
-threads=$(lscpu | egrep 'CPU\(s\)\:' | cut -d ':' -f 2)
+threads=$(lscpu | egrep '^CPU\(s\)\:' | cut -d ':' -f 2)
 
 cpu=$(cat /proc/cpuinfo | grep 'model name' | head -1 | cut -d ':' -f2)
 
