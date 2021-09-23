@@ -20,7 +20,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [product_configurator](product_configurator/) | 14.0.1.2.2 | [![pcatinean](https://github.com/pcatinean.png?size=30px)](https://github.com/pcatinean) | Base for product configuration interface modules
-[product_configurator_mrp](product_configurator_mrp/) | 14.0.1.2.0 | [![pcatinean](https://github.com/pcatinean.png?size=30px)](https://github.com/pcatinean) | BOM Support for configurable products
+[product_configurator_mrp](product_configurator_mrp/) | 14.0.1.2.1 | [![pcatinean](https://github.com/pcatinean.png?size=30px)](https://github.com/pcatinean) | BOM Support for configurable products
 [product_configurator_purchase](product_configurator_purchase/) | 14.0.1.0.0 | [![pcatinean](https://github.com/pcatinean.png?size=30px)](https://github.com/pcatinean) | Product configuration interface for Purchase
 [product_configurator_restriction_policy](product_configurator_restriction_policy/) | 14.0.1.0.0 |  | Adds a Restriction Policy for processing restrictions.
 [product_configurator_sale](product_configurator_sale/) | 14.0.1.0.0 | [![pcatinean](https://github.com/pcatinean.png?size=30px)](https://github.com/pcatinean) | Product configuration interface modules for Sale
