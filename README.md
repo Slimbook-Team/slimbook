@@ -7,7 +7,11 @@
 
 # Product Configurator
 
-Advanced Product Configurator (based on the Pledra project)
+Advanced Product Configurator, based on the Pledra project,
+https://github.com/pledra/odoo-product-configurator.
+
+This repository supports Odoo versions 14.0 and later.
+For previous Odoo versions, please refer to the Pledra repository.
 
 <!-- /!\ do not modify below this line -->
 
