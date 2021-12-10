@@ -23,15 +23,15 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[product_configurator](product_configurator/) | 14.0.1.2.2 | [![pcatinean](https://github.com/pcatinean.png?size=30px)](https://github.com/pcatinean) | Base for product configuration interface modules
-[product_configurator_mrp](product_configurator_mrp/) | 14.0.1.2.2 | [![pcatinean](https://github.com/pcatinean.png?size=30px)](https://github.com/pcatinean) | BOM Support for configurable products
-[product_configurator_purchase](product_configurator_purchase/) | 14.0.1.0.0 | [![pcatinean](https://github.com/pcatinean.png?size=30px)](https://github.com/pcatinean) | Product configuration interface for Purchase
+[product_configurator](product_configurator/) | 14.0.1.2.2 | [![PCatinean](https://github.com/PCatinean.png?size=30px)](https://github.com/PCatinean) | Base for product configuration interface modules
+[product_configurator_mrp](product_configurator_mrp/) | 14.0.1.2.2 | [![PCatinean](https://github.com/PCatinean.png?size=30px)](https://github.com/PCatinean) | BOM Support for configurable products
+[product_configurator_purchase](product_configurator_purchase/) | 14.0.1.0.0 | [![PCatinean](https://github.com/PCatinean.png?size=30px)](https://github.com/PCatinean) | Product configuration interface for Purchase
 [product_configurator_restriction_policy](product_configurator_restriction_policy/) | 14.0.1.0.0 |  | Adds a Restriction Policy for processing restrictions.
-[product_configurator_sale](product_configurator_sale/) | 14.0.1.1.1 | [![pcatinean](https://github.com/pcatinean.png?size=30px)](https://github.com/pcatinean) | Product configuration interface modules for Sale
-[product_configurator_sale_mrp](product_configurator_sale_mrp/) | 14.0.1.0.2 | [![pcatinean](https://github.com/pcatinean.png?size=30px)](https://github.com/pcatinean) | BOM Support for sales wizard
-[product_configurator_stock](product_configurator_stock/) | 14.0.1.0.0 | [![pcatinean](https://github.com/pcatinean.png?size=30px)](https://github.com/pcatinean) | Product configuration interface module for Stock
-[website_product_configurator](website_product_configurator/) | 14.0.1.1.0 | [![pcatinean](https://github.com/pcatinean.png?size=30px)](https://github.com/pcatinean) | Configure products in e-shop
-[website_product_configurator_mrp](website_product_configurator_mrp/) | 14.0.1.0.0 | [![pcatinean](https://github.com/pcatinean.png?size=30px)](https://github.com/pcatinean) | Website integration of MRP
+[product_configurator_sale](product_configurator_sale/) | 14.0.1.1.1 | [![PCatinean](https://github.com/PCatinean.png?size=30px)](https://github.com/PCatinean) | Product configuration interface modules for Sale
+[product_configurator_sale_mrp](product_configurator_sale_mrp/) | 14.0.1.0.2 | [![PCatinean](https://github.com/PCatinean.png?size=30px)](https://github.com/PCatinean) | BOM Support for sales wizard
+[product_configurator_stock](product_configurator_stock/) | 14.0.1.0.0 | [![PCatinean](https://github.com/PCatinean.png?size=30px)](https://github.com/PCatinean) | Product configuration interface module for Stock
+[website_product_configurator](website_product_configurator/) | 14.0.1.1.0 | [![PCatinean](https://github.com/PCatinean.png?size=30px)](https://github.com/PCatinean) | Configure products in e-shop
+[website_product_configurator_mrp](website_product_configurator_mrp/) | 14.0.1.0.0 | [![PCatinean](https://github.com/PCatinean.png?size=30px)](https://github.com/PCatinean) | Website integration of MRP
 
 [//]: # (end addons)
 
