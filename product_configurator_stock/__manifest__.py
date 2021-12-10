@@ -19,6 +19,6 @@
     "demo": ["demo/product_template.xml"],
     "installable": True,
     "development_status": "Beta",
-    "maintainers": ["pcatinean"],
+    "maintainers": ["PCatinean"],
     "auto_install": False,
 }
