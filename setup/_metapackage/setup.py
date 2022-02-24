@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo14-addon-product_configurator',
         'odoo14-addon-product_configurator_mrp',
+        'odoo14-addon-product_configurator_mrp_component',
         'odoo14-addon-product_configurator_purchase',
         'odoo14-addon-product_configurator_restriction_policy',
         'odoo14-addon-product_configurator_sale',
