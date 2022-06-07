@@ -8,48 +8,67 @@
 # wait 10 minutes (or more)
 # share your result with us, twitter: @SlimbookES
 
-threads=$(lscpu | egrep '^CPU\(s\)\:' | cut -d ':' -f 2)
-cpu=$(cat /proc/cpuinfo | grep 'model name' | head -1 | cut -d ':' -f2)
-result=''
 
-cd /tmp # && echo "We are now in $PWD"
+VERSION='14.19.1'
+THREADS=$(lscpu | grep -E '^CPU\(s\)\:' | awk '{print $2}')
+CPU=$(grep 'model name' /proc/cpuinfo | head -1 | cut -d ':' -f2)
+CURDIR="$PWD"
+RESULT=''
+
+cd /tmp || exit # && echo "We are now in $PWD"
 echo "Starting execution..."
 
-FILE=/tmp/v14.17.3.tar.gz
+# if ! test -f "$FILE"; 
+# then
+# 	echo "$FILE does not exists."
+# 	wget https://github.com/nodejs/node/archive/refs/tags/v14.17.3.tar.gz
+# fi
+
+DOWNLOAD_FILE="https://github.com/nodejs/node/archive/refs/tags/v${VERSION}.tar.gz"
+FILE="/tmp/v${VERSION}.tar.gz"
 if ! test -f "$FILE"; 
 then
-	echo "$FILE does not exists."
-	wget https://github.com/nodejs/node/archive/refs/tags/v14.17.3.tar.gz
+    wget $DOWNLOAD_FILE
+    rs=$?
+    if [[ $rs -ne 0 || ! -f "v${VERSION}.tar.gz" ]]
+    then
+        echo "Can not download"
+        exit 1
+    fi
 fi
+
+clean_test(){
+    if [[ -d "/tmp/node-${VERSION}" ]]
+    then
+        rm -rf "/tmp/node-${VERSION}"
+    fi
+    # if [[ -f "/tmp/v${VERSION}.tar.gz" ]]
+    # then
+    #     rm -f "v${VERSION}.tar.gz"
+    # fi
+}
 
 funct_compile () {
 	
-	DIR=/tmp/node-14.17.3
-	if test -d "$DIR"; 
-	then
-		# rm -f v14.17.3.tar.gz
-		rm -rf node-14.17.3
-	fi
-	tar xf /tmp/v14.17.3.tar.gz
+    # Clean before test
+    clean_test
 
-	cd node-14.17.3 # && echo "We are now in $PWD"
+	tar xf "/tmp/v${VERSION}.tar.gz"
+	cd "node-${VERSION}" || exit
 	./configure
 
-	start_time="$(date -u +%s)"
-	make -s -j $threads 2>&1 
-	sleep 3
-	end_time="$(date -u +%s)"
-	elapsed="$(($end_time-$start_time))"
-
-	h=$(($elapsed/3600))
-	m=$((($elapsed%3600)/60))
-	s=$(($elapsed%60))
-
-	cd /tmp # && echo "We are now in $PWD"
-
-	result="\nCPU benchmark finished. -- $(date) \nCPU:$cpu \nTotal time (hours:minutes:seconds): $h:$m:$s \n" 
-	printf "$result\n"
+    START_TIME="$(date -u +%s)"
+    make -s -j "$THREADS" 2>&1
+    END_TIME="$(date -u +%s)"
 	
+    ELAPSED="$((END_TIME - START_TIME))"
+    h=$((ELAPSED / 3600))
+    m=$(((ELAPSED % 3600) / 60))
+    s=$((ELAPSED % 60))
+
+	RESULT="\nCPU benchmark finished. -- $(date) \nCPU:$CPU \nTotal time (hours:minutes:seconds): $h:$m:$s \n" 
+	printf "$RESULT\n"
+
 }
 
 if test $1 && [ $1 = '--loop' ];  
@@ -58,7 +77,8 @@ then
 	for (( ; ; ))
 	do
 		funct_compile
-		printf "$result" >> ~/nodejsbenchmark_results.txt
+		printf "$RESULT" >> ~/nodejsbenchmark_results.txt
+        cd /tmp || exit
 	done
 else
 	funct_compile
