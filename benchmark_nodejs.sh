@@ -8,7 +8,6 @@
 # wait 10 minutes (or more)
 # share your result with us, twitter: @SlimbookES
 
-
 VERSION='14.19.1'
 THREADS=$(lscpu | grep -E '^CPU\(s\)\:' | awk '{print $2}')
 CPU=$(grep 'model name' /proc/cpuinfo | head -1 | cut -d ':' -f2)
@@ -53,9 +52,9 @@ funct_compile () {
     # Clean before test
     clean_test
 
-	tar xf "/tmp/v${VERSION}.tar.gz"
-	cd "node-${VERSION}" || exit
-	./configure
+    tar xf "/tmp/v${VERSION}.tar.gz"
+    cd "node-${VERSION}" || exit
+    ./configure
 
     START_TIME="$(date -u +%s)"
     make -s -j "$THREADS" 2>&1
@@ -66,8 +65,8 @@ funct_compile () {
     m=$(((ELAPSED % 3600) / 60))
     s=$((ELAPSED % 60))
 
-	RESULT="\nCPU benchmark finished. -- $(date) \nCPU:$CPU \nTotal time (hours:minutes:seconds): $h:$m:$s \n" 
-	printf "$RESULT\n"
+    RESULT="\nCPU benchmark finished. -- $(date) \nCPU:$CPU \nTotal time (hours:minutes:seconds): $h:$m:$s \n" 
+    printf "$RESULT\n"
 
 }
 
@@ -83,4 +82,3 @@ then
 else
 	funct_compile
 fi
-	
