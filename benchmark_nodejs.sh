@@ -3,8 +3,10 @@
 
 # instructions:
 # open a terminal and run:
-# wget https://raw.githubusercontent.com/slimbook/slimbook/master/benchmark_nodejs.sh
+# wget https://raw.githubusercontent.com/slimbook/slimbook/master/benchmark_nodejs.
+# Exec:
 # bash benchmark_nodejs.sh
+# Use --loop parameter to loop execution; stop loop pressing Ctrl+C
 # wait 10 minutes (or more)
 # share your result with us, twitter: @SlimbookES
 
