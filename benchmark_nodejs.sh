@@ -3,7 +3,7 @@
 
 # instructions:
 # open a terminal and run:
-# wget https://raw.githubusercontent.com/slimbook/slimbook/master/benchmark_nodejs.
+# wget https://raw.githubusercontent.com/slimbook/slimbook/master/benchmark_nodejs.sh
 # Exec:
 # bash benchmark_nodejs.sh
 # Use --loop parameter to loop execution; stop loop pressing Ctrl+C
