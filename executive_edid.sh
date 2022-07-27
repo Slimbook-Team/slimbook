@@ -17,6 +17,7 @@ sudo sed -i 's%GRUB_CMDLINE_LINUX_DEFAULT="%GRUB_CMDLINE_LINUX_DEFAULT="drm.edid
 wget https://raw.githubusercontent.com/slimbook/slimbook/master/assets/executive_edid_hooks
 sudo mkdir /etc/initramfs-tools/hooks/
 sudo cp /tmp/executive_edid_hooks /etc/initramfs-tools/hooks/edid
+sudo chmod +x /etc/initramfs-tools/hooks/edid
 
 sudo update-initramfs -u
 sudo update-grub
