@@ -12,7 +12,7 @@ wget https://raw.githubusercontent.com/slimbook/slimbook/master/assets/executive
 sudo mkdir /etc/initramfs-tools/hooks/edid/
 sudo cp /tmp/executive_edid_mod90hz.bin /lib/firmware/edid/edid.bin
 
-sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="/GRUB_CMDLINE_LINUX_DEFAULT="drm.edid_firmware=eDP-1:edid/edid.bin /g' "/etc/default/grub"
+sudo sed -i 's%GRUB_CMDLINE_LINUX_DEFAULT="%GRUB_CMDLINE_LINUX_DEFAULT="drm.edid_firmware=eDP-1:edid/edid.bin %g' "/etc/default/grub" #% en lugar de /
 
 wget https://raw.githubusercontent.com/slimbook/slimbook/master/assets/executive_edid_hooks
 sudo mkdir /etc/initramfs-tools/hooks/
