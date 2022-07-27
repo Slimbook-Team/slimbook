@@ -1,0 +1,19 @@
+#!/bin/sh
+PREREQ=""
+prereqs()
+{
+    echo "$PREREQ"
+}
+
+case $1 in
+prereqs)
+    prereqs
+    exit 0
+    ;;
+esac
+
+. /usr/share/initramfs-tools/hook-functions
+# Begin real processing below this line
+mkdir -p "${DESTDIR}/lib/firmware/edid"
+cp -a /lib/firmware/edid/edid.bin "${DESTDIR}/lib/firmware/edid/edid.bin"
+exit 0
