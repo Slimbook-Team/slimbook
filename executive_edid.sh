@@ -30,6 +30,7 @@ if [ $DISTRO = "Fedora" ] || [ $DISTRO = "Manjaro" ]; then
   sudo cp /tmp/executive_edid.conf /etc/dracut.conf.d/executive_edid.conf
   sudo dracut -f
   sudo grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
+  sudo grub2-mkconfig -o /boot/grub/grub.cfg 
 fi
 #fedora end
 
