@@ -1,25 +1,36 @@
 # SLIMBOOK
-"Welcome to freedom"
+"Welcome to freedom" - El ultrabook GNU/Linux - www.slimbook.es
 
-El ultrabook GNU/Linux
+## All the application repositories have been transferesd to Slimbook-Team Organization
 
-www.slimbook.es
+## This repository:
+### Scripts:
 
-SLIMBOOK TEAM
-
-Scripts
---
-Para ejecutar los scripts;
-1. Descárgalos
-2. Abre una terminal (ctrl+alt+t)
-3. Sitúate en la ruta de script:
+1. Download
+2. Open a terminal (ctrl+alt+t)
+3. Move to the script path:
   ```
   cd <ruta>
   ```
-4. Ejecútalo usando bash:
+4. Use bash to exec the script:
   ```
   bash script.sh
   ```
 
-Desarrollamos aplicaciones para optimizar tu portátil ultrabook.
-Código fuente a tu disposición bajo licencia Creative Commons BY-NC-ND 3.0
+### 📫 How to reach us: ...
+- Send an e-mail to: dev@slimbook.es
+
+## Issues
+
+Having issues? Just report in [the issue section](https://github.com/slimbook/slimbook/issues). **Thanks for the feedback!**
+
+## Contribute
+
+Fork this repository, make your changes and then issue a pull request. If you find bugs or have new ideas that you do not want to implement yourself, file a bug report.
+
+## Donate
+
+Become a patron, by simply clicking on this button (**very appreciated!**):
+
+[![](https://c5.patreon.com/external/logo/become_a_patron_button.png)](https://www.patreon.com/slimbook)
+
