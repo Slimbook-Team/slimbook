@@ -1,7 +1,7 @@
 # SLIMBOOK
 "Welcome to freedom" - El ultrabook GNU/Linux - www.slimbook.es
 
-## All the application repositories have been transferesd to Slimbook-Team Organization
+## All the application repositories have been transfered to [Slimbook-Team Organization](https://github.com/Slimbook-Team)
 
 ## This repository:
 ### Scripts:
