@@ -37,7 +37,7 @@ fi
 if [ -f "/etc/kernelstub/configuration" ]
 then
 echo "File is found"
-TEXTFILE
+cat <<EOF > /etc/kernelstub/configuration
 {
   "default": {
     "kernel_options": [
@@ -67,7 +67,8 @@ TEXTFILE
     "config_rev": 3
   }
 }
-TEXTFILE >> /etc/kernelstub/configuration
+EOF
+
 
 else
    echo "File is not found"
