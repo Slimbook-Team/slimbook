@@ -30,8 +30,49 @@ if [ $DISTRO = "Fedora" ] || [ $DISTRO = "Manjaro" ]; then
   sudo cp /tmp/executive_edid.conf /etc/dracut.conf.d/executive_edid.conf
   sudo dracut -f
   sudo grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
-  sudo grub2-mkconfig -o /boot/grub/grub.cfg 
+  sudo grub2-mkconfig -o /boot/grub/grub.cfg   
 fi
 #fedora end
+
+if [ -f "/etc/kernelstub/configuration" ]
+then
+echo "File is found"
+cat <<EOF > /etc/kernelstub/configuration
+{
+  "default": {
+    "kernel_options": [
+      "quiet",
+      "splash"
+    ],
+    "esp_path": "/boot/efi",
+    "setup_loader": false,
+    "manage_mode": false,
+    "force_update": false,
+    "live_mode": false,
+    "config_rev": 3
+  },
+  "user": {
+    "kernel_options": [
+      "quiet",
+      "loglevel=0",
+      "systemd.show_status=false",
+      "splash",
+      "drm.edid_firmware=eDP-1:edid/edid.bin"
+    ],
+    "esp_path": "/boot/efi",
+    "setup_loader": true,
+    "manage_mode": true,
+    "force_update": false,
+    "live_mode": false,
+    "config_rev": 3
+  }
+}
+EOF
+
+sudo kernelstub -f
+
+else
+   echo "File is not found"
+fi
 
 echo "Finalizado, reinicie el ordenador para aplicar los cambios"
