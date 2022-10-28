@@ -69,6 +69,7 @@ cat <<EOF > /etc/kernelstub/configuration
 }
 EOF
 
+sudo kernelstub -f
 
 else
    echo "File is not found"
