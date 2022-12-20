@@ -3,6 +3,12 @@
 
 ## All the application repositories have been transfered to [Slimbook-Team Organization](https://github.com/Slimbook-Team)
 
+## slimbook-hello.sh
+```
+wget https://raw.githubusercontent.com/Slimbook-Team/slimbook/master/slimbook-hello.sh
+bash slimbook-hello.sh
+```
+
 ## This repository:
 ### Scripts:
 
