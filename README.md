@@ -5,7 +5,7 @@
 
 ## slimbook-hello.sh
 ```
-wget https://raw.githubusercontent.com/Slimbook-Team/slimbook/master/slimbook-hello.sh
+wget https://raw.githubusercontent.com/Slimbook-Team/slimbook/master/slimbook-hello.sh -P /usr/bin
 bash slimbook-hello.sh
 ```
 
