@@ -1,4 +1,11 @@
 #!/bin/bash
+
+# Instructions:
+# open a terminal and run:
+# sudo wget https://raw.githubusercontent.com/Slimbook-Team/slimbook/master/slimbook-hello -P /usr/bin && sudo chmod +x /usr/bin/slimbook-hello
+# Exec
+# slimbook-hello
+
 printf "
  ███████ ██      ██ ███    ███ ██████   ███████   ███████  ██   ██ 
 ██       ██      ██ ████  ████ ██   ██ ██     ██ ██     ██ ██  ██  
