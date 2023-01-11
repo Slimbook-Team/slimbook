@@ -28,4 +28,4 @@ lsblk /dev/nvme* 2>/dev/null
 
 
 echo
-echo "Feel free to contribute with this code at https://github.com/Slimbook-Team/slimbook/blob/master/slimbook-hello.sh to make this script look even better ;)"
+echo "Feel free to contribute with this code at https://github.com/Slimbook-Team/slimbook/blob/master/slimbook-hello to make this script look even better ;)"
