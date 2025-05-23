@@ -1,0 +1,30 @@
+#!/bin/sh
+
+case "$1" in
+    pre)
+        /usr/bin/slimbookctl config-store
+    ;;
+    post)
+        /usr/bin/slimbookctl config-load
+        if [ "$(slimbookctl info | grep family | cut -d ":" -f 2)" = "creative" ] || [ "$(grep CREA /sys/class/dmi/id/product_name)" ]; then
+            echo Creative model detected
+	    if [ "$(dmesg --level err | tail -3 | grep "atkbd")" ]; then
+                echo serio0 > /sys/bus/serio/drivers/atkbd/unbind
+                if [ $( command -v "screen") ]; then
+                    echo screen used
+                    screen -dmS keyboard systemctl su
+                else
+                    echo Install screen
+                fi
+                echo Keyboard: Fixed
+            else
+                echo Keyboard: Ok
+            fi
+        fi
+    ;;
+esac
+
+exit 0
+
+
+
