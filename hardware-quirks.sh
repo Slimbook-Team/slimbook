@@ -13,12 +13,12 @@ function enable_i8042_fix
         return
     fi
     
-    echo "ACTION=="add", SUBSYSTEM=="serio", DRIVERS=="atkbd", ATTR{power/wakeup}="disabled"" > /etc/udev/rules.d/99-z-slimbook-i8042.rules
+    echo "ACTION==\"add\", SUBSYSTEM==\"serio\", DRIVERS==\"atkbd\", ATTR{power/wakeup}=\"disabled\"" > /etc/udev/rules.d/99-z-slimbook-i8042.rules
 }
 
 function enable_ecwake_fix
 {
-    status=`grep -r acpi.ec_no_wakeup=1 /proc/cmdline /etc/default/grub /etc/default/grub.d/`
+    status=`grep -r acpi.ec_no_wakeup=1 /proc/cmdline /etc/default/grub*`
     
     if [[ -n $status ]]; then
         echo "EC wakeup fix is already active"
